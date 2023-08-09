@@ -21,6 +21,7 @@ import TwoColContactUsWithIllustrationFullForm from "components/forms/TwoColCont
 import shopIconImageSrc from "images/shop-icon.svg";
 import celebrationIconImageSrc from "images/celebration-icon.svg";
 import chefIconImageSrc from "images/chef-icon.svg";  
+import ThreeColCenteredStatsPrimaryBackground from "components/features/ThreeColCenteredStatsPrimaryBackground";
 
 export default () => {
   const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
@@ -93,41 +94,15 @@ export default () => {
           decoratorBlobCss={tw`xl:w-40 xl:h-40 opacity-15 -translate-x-1/2 left-1/2`}
         />
      
-     <Pricing
-        subheading={<Subheading>Pricing</Subheading>}
-        description=""
-        heading={
-          <>
-            Reasonable & Flexible <HighlightedText>Plans.</HighlightedText>
-          </>
-        }
-        plans={[
-          {
-            name: "Personal Campaign",
-            price: "₹999",
-            duration: "",
-            mainFeature: "For Personal Blogs",
-            features: ["10 Nano-Influencers", "5000 views"],
-            featured: true,
-          },
-          {
-            name: "Business",
-            price: "₹4,999",
-            duration: "",
-            mainFeature: "For Small Businesses",
-            features: ["60 Nano-Influencers", "30,000 views"],
-            featured: true,
-          },
-          {
-            name: "Enterprise",
-            price: "₹9,999",
-            duration: "",
-            mainFeature: "For Big Companies",
-            features: ["90 Nano-Influencers", "50,000 views"],
-            featured: true,
-          }
-        ]}
-      />
+     <ThreeColCenteredStatsPrimaryBackground
+      heading={
+        <>
+         Start your campaign for as low as ₹ 10,000
+        </>
+      }
+      description="No matter what your budget is, we have a plan that's right for you."
+     />
+            
       <FAQ
         subheading={<Subheading>FAQS</Subheading>}
         heading={

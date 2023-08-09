@@ -1,12 +1,14 @@
 import React from "react";
 import tw from "twin.macro";
-import { css } from "styled-components/macro"; //eslint-disable-line
+import { css } from "styled-components/macro";
+import styled from "styled-components";
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { Container as ContainerBase, ContentWithPaddingXl } from "components/misc/Layouts";
 import { SectionDescription } from "components/misc/Typography";
+import { useNavigate } from 'react-router-dom';
 
 const Container = tw(ContainerBase)`my-8 lg:my-10 bg-primary-900 text-gray-100 -mx-8 px-8`;
-const HeadingContainer = tw.div``;
+const HeadingContainer = tw.div`flex flex-col items-center justify-center`;
 const Heading = tw(SectionHeading)`sm:text-3xl md:text-4xl lg:text-5xl`;
 const Subheading = tw(SubheadingBase)`text-gray-100 text-center`;
 const Description = tw(SectionDescription)`text-gray-400 text-center mx-auto max-w-screen-md`;
@@ -16,25 +18,22 @@ const Stat = tw.div`flex flex-col text-center p-4 tracking-wide`
 const StatKey = tw.div`text-xl font-medium`
 const StatValue = tw.div`text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-black`
 
+const Actions = styled.div`
+  ${tw`mt-6`}
+  button {
+    ${tw`w-full bg-primary-500 text-gray-100 font-bold my-4 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+  }
+`;
+
+
+
 export default ({
   subheading = "",
   heading = "Over 9000 Projects Completed",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  stats = [
-    {
-      key: "Clients",
-      value: "2500+",
-    },
-    {
-      key: "Revenue",
-      value: "$100M+",
-    },
-    {
-      key: "Employees",
-      value: "150+",
-    },
-  ]
+  stats = []
 }) => {
+  const navigate = useNavigate();
   return (
     <Container>
       <ContentWithPaddingXl>
@@ -42,6 +41,11 @@ export default ({
           {subheading && <Subheading>{subheading}</Subheading>}
           <Heading>{heading}</Heading>
           {description && <Description>{description}</Description>}
+          
+          {/* This is where you add the GET STARTED button */}
+          <Actions>
+          <button onClick={() =>   navigate('/contact', { state: { email: "" } })}>GET STARTED</button>
+          </Actions>
         </HeadingContainer>
         <StatsContainer>
           {stats.map((stat, index) => (
