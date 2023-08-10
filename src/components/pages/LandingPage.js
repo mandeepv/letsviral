@@ -94,14 +94,41 @@ export default () => {
           decoratorBlobCss={tw`xl:w-40 xl:h-40 opacity-15 -translate-x-1/2 left-1/2`}
         />
      
-     <ThreeColCenteredStatsPrimaryBackground
-      heading={
-        <>
-         Start your campaign for as low as ₹ 10,000
-        </>
-      }
-      description="No matter what your budget is, we have a plan that's right for you."
-     />
+     <Pricing
+        subheading={<Subheading>Pricing</Subheading>}
+        description=""
+        heading={
+          <>
+            No matter your needs, we have a Plan <HighlightedText>For You.</HighlightedText>
+          </>
+        }
+        plans={[
+          {
+            name: "Trial Campaign",
+            price: "₹10,000",
+            duration: "",
+            mainFeature: "Try & see how we can help you",
+            features: ["5,000 views"],
+            featured: true,
+          },
+          {
+            name: "Recommended Campaign",
+            price: "₹50,000",
+            duration: "",
+            mainFeature: "Make your brand grow with us",
+            features: ["25,000 views"],
+            featured: true,
+          },
+          {
+            name: "Full Service Campaign",
+            price: "₹1,00,000",
+            duration: "",
+            mainFeature: "Get viral with us!",
+            features: ["50,000 views"],
+            featured: true,
+          }
+        ]}
+      />
             
       <FAQ
         subheading={<Subheading>FAQS</Subheading>}
