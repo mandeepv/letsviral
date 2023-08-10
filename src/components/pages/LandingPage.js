@@ -108,7 +108,7 @@ export default () => {
             price: "₹10,000",
             duration: "",
             mainFeature: "Try & see how we can help you",
-            features: ["5,000 views"],
+            features: ["5,000 qualified views"],
             featured: true,
           },
           {
@@ -116,7 +116,7 @@ export default () => {
             price: "₹50,000",
             duration: "",
             mainFeature: "Make your brand grow with us",
-            features: ["25,000 views"],
+            features: ["25,000 qualified views"],
             featured: true,
           },
           {
@@ -124,7 +124,7 @@ export default () => {
             price: "₹1,00,000",
             duration: "",
             mainFeature: "Get viral with us!",
-            features: ["50,000 views"],
+            features: ["50,000 qualified views"],
             featured: true,
           }
         ]}
